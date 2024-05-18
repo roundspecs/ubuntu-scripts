@@ -20,6 +20,9 @@ git config --global user.name "Zarif"
 sudo apt autoremove -y
 sudo apt autoclean -y
 
+# Aliases
+echo "alias update='sudo apt update -y && sudo apt upgrade -y'" >>~/.bashrc
+echo 'alias lb="echo 400 | sudo tee /sys/class/backlight/intel_backlight/brightness"' >>~/.bashrc
+
 # Done
 echo "Post installation complete. Please restart your system."
- 
