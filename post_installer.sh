@@ -22,7 +22,7 @@ sudo apt autoclean -y
 
 # Aliases
 echo "alias update='sudo apt update -y && sudo apt upgrade -y'" >>~/.bashrc
-echo 'alias lb="echo 400 | sudo tee /sys/class/backlight/intel_backlight/brightness"' >>~/.bashrc
+echo 'alias lb="echo 50 | sudo tee /sys/class/backlight/intel_backlight/brightness"' >>~/.bashrc
 
 # Done
 echo "Post installation complete. Please restart your system."
