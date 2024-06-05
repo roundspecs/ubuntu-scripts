@@ -22,6 +22,7 @@ sudo apt install obs-studio
 # Git configuration
 git config --global user.name "Zarif Muhtasim"
 git config --global user.email "2502.zarif@gmail.com"
+git config --global core.editor vim
 
 # Cleanup
 sudo apt autoremove -y
