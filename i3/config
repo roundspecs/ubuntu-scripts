@@ -12,7 +12,7 @@
 set $mod Mod4
 
 # Colors
-set $bg-color 	         #000000
+set $bg-color 	         #111111
 set $inactive-bg-color   #000000
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
@@ -99,14 +99,14 @@ bindsym $mod+Shift+Right move right
 # bindsym $mod+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
 # bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -123,9 +123,9 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1:  "
+set $ws2 "2:  "
+set $ws3 "3:  "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -173,10 +173,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -195,13 +195,14 @@ bindsym $mod+r mode "resize"
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $primary-color       $primary-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+client.focused          $primary-color      $primary-color     $text-color          $primary-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $primary-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $primary-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $primary-color
 
-hide_edge_borders both
-for_window [class="^.*"] border normal 1
+# hide_edge_borders both
+for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] title_format " "
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -211,8 +212,8 @@ bar {
           background $bg-color
               separator #757575
           #                  border             background         text
-          focused_workspace  $bg-color          $bg-color          $text-color
-          inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+          focused_workspace  $primary-color     $primary-color     $text-color
+          inactive_workspace $bg-color          $bg-color          $inactive-text-color
           urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
         }
 }
@@ -228,8 +229,8 @@ exec xinput set-prop 10 "libinput Tapping Enabled" 1
 exec xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
 
 # Brightness control
-bindsym XF86MonBrightnessUp exec --no-startup-id sudo brightnessctl set +5%
-bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id sudo brightnessctl set +50
+bindsym XF86MonBrightnessDown exec --no-startup-id sudo brightnessctl set 50-
 
 # Browser setup
 bindsym $mod+b exec brave
@@ -239,3 +240,12 @@ bindsym $mod+e exec gnome-terminal -e ranger
 
 # Co-exist with Gnome
 exec --no-startup-id /usr/libexec/gsd-xsettings
+
+# Set wallpaper
+exec_always feh --bg-scale ~/.config/i3/background.jpg
+
+# Night light settings
+exec --no-startup-id redshift-gtk -l 23.6850:90.3563 -t 5700:3500
+
+# Screenshot settings
+bindsym Print exec maim --select --hidecursor --format=png | xclip -selection clipboard -t image/png -i
