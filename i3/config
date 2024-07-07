@@ -16,7 +16,7 @@ set $bg-color 	         #111111
 set $inactive-bg-color   #000000
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
+set $urgent-bg-color     #f14c4c
 set $primary-color       #15AC91
 
 # Font for window titles. Will also be used by the bar unless a different font
