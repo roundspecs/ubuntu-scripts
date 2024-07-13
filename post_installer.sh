@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# The commands that can be run multiple times are put here
+
 # Snap packages
 echo -e "\n== LOG: Installing snap packages =="
 sudo snap refresh
@@ -10,7 +12,6 @@ sudo snap install discord
 sudo snap install --classic obsidian
 sudo snap install termdown
 sudo snap install telegram-desktop
-sudo snap install obsidian --classic
 
 # APT packages
 echo -e "\n== LOG: Installing APT packages =="
@@ -31,6 +32,10 @@ sudo apt install feh -y
 sudo apt install pavucontrol -y
 sudo apt install redshift redshift-gtk -y
 sudo apt install maim -y
+sudo apt install picom -y
+sudo apt install plocate -y
+sudo apt install tree -y
+sudo apt install rofi -y
 
 # Git configuration
 echo -e "\n== LOG: Configuring git =="
@@ -39,11 +44,16 @@ git config --global user.email "2502.zarif@gmail.com"
 git config --global core.editor vim
 
 # i3 setup
-echo -e "\n== LOG: Setting up i3 =="
-# For permission issue with brightness: https://www.reddit.com/r/i3wm/comments/lzj5nc/comment/ky7752d/
-CONFIG_DIR_LOC=$HOME/.config/
-I3_DIR_LOC=i3/
-cp -r $I3_DIR_LOC $CONFIG_DIR_LOC
+echo -e "\n== log: setting up i3 =="
+cp -r i3/ ~/.config/
+
+# dunst setup
+echo -e "\n== log: setting up dunst =="
+cp -r dunst/ ~/.config/
+
+# rofi setup
+echo -e "\n== log: setting up rofi =="
+cp -r rofi/ ~/.config/
 
 # Cleanup
 echo -e "\n== LOG: Cleaning up =="
