@@ -221,8 +221,8 @@ bindsym $mod+shift+x exec i3lock --color "$bg-color"
 exec --no-startup-id xinput disable 8
 
 # Touchpad setup
-exec xinput set-prop 10 "libinput Tapping Enabled" 1
-exec xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop 9 "libinput Tapping Enabled" 1
+exec --no-startup-id xinput set-prop 9 "libinput Natural Scrolling Enabled" 1
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo brightnessctl set +50 && dunstify --urgency low --replace 2593 --timeout 2000 " ++Brightness $(brightnessctl get)" --hints=int:value:"$(expr $(brightnessctl get) / 60 - 50)"
