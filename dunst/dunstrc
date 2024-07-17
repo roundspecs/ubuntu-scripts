@@ -33,7 +33,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 10x50
+    offset = 810x30
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -49,10 +49,10 @@
 
     # Set the progress bar height. This includes the frame, so make sure
     # it's at least twice as big as the frame width.
-    progress_bar_height = 10
+    progress_bar_height = 5
 
     # Set the frame width of the progress bar
-    progress_bar_frame_width = 1
+    progress_bar_frame_width = 0
 
     # Set the minimum width for the progress bar
     progress_bar_min_width = 150
@@ -61,7 +61,7 @@
     progress_bar_max_width = 300
 
     # Corner radius for the progress bar. 0 disables rounded corners.
-    progress_bar_corner_radius = 0
+    progress_bar_corner_radius = 10
 
     # Corner radius for the icon image.
     icon_corner_radius = 0
@@ -79,7 +79,7 @@
     # notifications.
     # Set to 0 to disable.
     # If gap_size is greater than 0, this setting will be ignored.
-    separator_height = 2
+    separator_height = 0
 
     # Padding between text and separator.
     padding = 8
@@ -92,16 +92,18 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 2
+    frame_width = 0
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
+    frame_color = "#ffffff"
+
+    highlight = "#a277ff"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 0
+    gap_size = 2
 
     # Define a color for the separator.
     # possible values are:
@@ -250,7 +252,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 0
+    corner_radius = 5
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -296,8 +298,8 @@
     # These values can be strung together for each mouse event, and
     # will be executed in sequence.
     mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    mouse_middle_click = close_all 
+    mouse_right_click = do_action, close_current
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
@@ -314,20 +316,20 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#222222"
-    foreground = "#888888"
+    foreground = "#ffffff"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#285577"
+    background = "#343147"
     foreground = "#ffffff"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_critical]
-    background = "#900000"
+    background = "#ff6767"
     foreground = "#ffffff"
     frame_color = "#ff0000"
     timeout = 0

@@ -5,7 +5,6 @@
 # Snap packages
 echo -e "\n== LOG: Installing snap packages =="
 sudo snap refresh
-sudo snap install --classic code
 sudo snap install brave
 sudo snap install --classic slack
 sudo snap install discord
