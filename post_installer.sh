@@ -35,6 +35,7 @@ sudo apt install picom -y
 sudo apt install plocate -y
 sudo apt install tree -y
 sudo apt install rofi -y
+sudo apt install stow -y
 
 # Git configuration
 echo -e "\n== LOG: Configuring git =="
