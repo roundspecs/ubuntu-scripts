@@ -42,18 +42,6 @@ git config --global user.name "Zarif Muhtasim"
 git config --global user.email "2502.zarif@gmail.com"
 git config --global core.editor vim
 
-# i3 setup
-echo -e "\n== log: setting up i3 =="
-cp -r i3/ ~/.config/
-
-# dunst setup
-echo -e "\n== log: setting up dunst =="
-cp -r dunst/ ~/.config/
-
-# rofi setup
-echo -e "\n== log: setting up rofi =="
-cp -r rofi/ ~/.config/
-
 # Cleanup
 echo -e "\n== LOG: Cleaning up =="
 sudo apt autoremove -y
