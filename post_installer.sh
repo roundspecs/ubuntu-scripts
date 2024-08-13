@@ -12,31 +12,6 @@ sudo snap install --classic obsidian
 sudo snap install termdown
 sudo snap install telegram-desktop
 
-# APT packages
-echo -e "\n== LOG: Installing APT packages =="
-sudo apt update -y && sudo apt upgrade -y
-sudo apt install gnome-shell-extension-manager -y
-sudo apt install gnome-tweaks -y
-sudo apt install neofetch -y
-sudo apt install git -y
-sudo apt install neovim -y
-sudo apt install fonts-firacode -y
-sudo apt install qbittorrent -y
-sudo apt install yt-dlp -y
-sudo apt install i3 -y
-sudo apt install brightnessctl -y
-sudo apt install ranger -y
-sudo apt install i3blocks -y
-sudo apt install feh -y
-sudo apt install pavucontrol -y
-sudo apt install redshift redshift-gtk -y
-sudo apt install maim -y
-sudo apt install picom -y
-sudo apt install plocate -y
-sudo apt install tree -y
-sudo apt install rofi -y
-sudo apt install stow -y
-
 # Git configuration
 echo -e "\n== LOG: Configuring git =="
 git config --global user.name "Zarif Muhtasim"
